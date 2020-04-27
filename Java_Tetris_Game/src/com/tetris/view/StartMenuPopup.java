@@ -11,7 +11,7 @@ import javax.swing.WindowConstants;
 
 import com.tetris.util.ScreenUtil;
 
-//ì²˜ìŒ í…ŒíŠ¸ë¦¬ìŠ¤ í”„ë ˆì„ ë„ì›Œì£¼ëŠ” í´ë˜ìŠ¤
+//Ã³À½ Å×Æ®¸®½º ÇÁ·¹ÀÓ ¶ç¿öÁÖ´Â Å¬·¡½º
 @SuppressWarnings("serial")
 public class StartMenuPopup extends JDialog {
 	JButton start;
@@ -25,7 +25,7 @@ public class StartMenuPopup extends JDialog {
 		startButtonEvents();
 	}
 
-//	í…ŒíŠ¸ë¦¬ìŠ¤ ìœˆë„ìš° í”„ë ˆì„
+//	Å×Æ®¸®½º À©µµ¿ì ÇÁ·¹ÀÓ
 	private void startFrameSetting() {
 		setTitle("TETRIS MAIN MENU");
 		setModal(true);
@@ -34,9 +34,12 @@ public class StartMenuPopup extends JDialog {
 		setLocation(ScreenUtil.getCenterPosition(this));
 		setResizable(false);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		
+		Music introMusic = new Music("introMusic.mp3", true);
+		introMusic.start();
 	}
 	
-//	í”„ë ˆì„ì— ë‚´ ë²„íŠ¼
+//	ÇÁ·¹ÀÓ¿¡ ³» ¹öÆ°
 	private void startButton() {
 		start = new JButton("S T A R T");
 		ranking = new JButton("R A N K I N G");
@@ -54,7 +57,7 @@ public class StartMenuPopup extends JDialog {
 		add(exit);
 	}
 
-//	ë²„íŠ¼ ì´ë²¤íŠ¸
+//	¹öÆ° ÀÌº¥Æ®
 	private void startButtonEvents() {
 		start.addActionListener(new ActionListener() {
 
@@ -95,7 +98,7 @@ public class StartMenuPopup extends JDialog {
 		});
 	}
 	
-//	í”„ë ˆì„ ë‚´ì— TETRIS ë¬¸êµ¬ ì…í˜€ ë‚´ë³´ëƒ„
+//	ÇÁ·¹ÀÓ ³»¿¡ TETRIS ¹®±¸ ÀÔÇô ³»º¸³¿
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
